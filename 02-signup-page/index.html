@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="src/output.css" />
+  <title>Sign Up</title>
+</head>
+
+<body class="relative flex min-h-screen items-center justify-center bg-stone-950 px-4">
+  <div class="absolute inset-0 z-0 m-auto size-60 rounded-full bg-white blur-[400px]"></div>
+  <div class="perspective">
+    <div id="card" class="z-10 flex w-full max-w-lg flex-col items-center rounded-2xl border border-white/20 bg-gradient-to-b from-white/10 to-transparent p-3.5 backdrop-blur-lg transform-3d">
+    <div class="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-white/10">
+      <i class="fa-solid fa-image text-white"></i>
+    </div>
+    <h2 class="text-2xl text-white">Welcome back!</h2>
+    <p class="pb-4 text-base text-white">
+      Please enter your details to sign in.
+    </p>
+    <!-- social login buttons -->
+    <div class="flex w-full flex-row justify-center space-x-4 pb-4 sm:space-x-6">
+      <div class="flex h-11 w-28 cursor-pointer items-center justify-center rounded-md border border-white/20">
+        <img src="src/img/Apple.png" alt="" class="h-w-5 w-5 object-cover invert" />
+      </div>
+
+      <div class="flex h-11 w-28 cursor-pointer items-center justify-center rounded-md border border-white/20">
+        <img src="src/img/Google.png" alt="" class="h-w-5 w-5 object-cover" />
+      </div>
+
+      <div class="flex h-11 w-28 cursor-pointer items-center justify-center rounded-md border border-white/20">
+        <img src="src/img/Twitter.png" alt="" class="h-w-5 w-5 object-cover" />
+      </div>
+    </div>
+    <!-- separator -->
+    <div class="flex w-full items-center space-x-2 pb-4">
+      <div class="h-px flex-1 bg-gradient-to-l from-white to-transparent"></div>
+      <span class="text-white/70">or</span>
+      <div class="h-px flex-1 bg-gradient-to-r from-white to-transparent"></div>
+    </div>
+
+    <!-- input  -->
+    <div class="mt-4 flex w-full flex-col space-y-10">
+      <div class="relative">
+        <label for="email" class="absolute -top-8 left-2 text-base text-white/70">Email</label>
+        <input type="email" id="email" placeholder="Enter your email"
+          class="w-full rounded-md border border-white/20 bg-transparent p-2 text-base text-white/70 focus:border-sky-500 focus:outline-none" />
+      </div>
+      <div class="relative">
+        <label for="password" class="absolute -top-8 left-2 text-base text-white/70">Password</label>
+        <input type="password" id="password" placeholder="•••••••••"
+          class="w-full rounded-md border border-white/20 bg-transparent p-2 text-base text-white/70 focus:border-sky-500 focus:outline-none" />
+      </div>
+      <a href="#" class="items-end-safe text-sm text-white/70 hover:underline">Forgot your password?</a>
+    </div>
+
+    <!-- submit button -->
+    <div class="mt-4 flex w-full flex-col space-y-4">
+      <button
+        class="text-whit relative inline-flex cursor-pointer items-center justify-center rounded-lg border border-white p-3 text-sm font-medium text-white duration-100 hover:scale-100">
+        Sign In
+      </button>
+
+      <p class="text-center text-base text-white/40">
+        Don't have an account yet ?
+        <span class="cursor-pointer text-white">Sign Up</span>
+      </p>
+    </div>
+  </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
