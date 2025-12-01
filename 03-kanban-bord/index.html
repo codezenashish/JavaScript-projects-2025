@@ -9,29 +9,40 @@
   </head>
   <body>
     <main>
-      <nav class="">
+      <nav class="nav-bar">
         <p>kanban board</p>
         <button>add new task</button>
       </nav>
 
       <section class="kanban-board">
-        <div class="new-task">
+        <div id="newTask" class="new-task">
           <header class="heaader">
-            <p class="head-text">todo</p>
+            <p class="head-text">new task</p>
+            <p class="head-text">count</p>
+          </header>
+          <div draggable="true" class="task">
+            <h3 class="task-title">Task Heading</h3>
+            <p class="task-desc">
+              This is the description of the task where details will be written.
+            </p>
+
+            <div class="task-actions">
+              <button class="edit-btn">Edit</button>
+              <button class="delete-btn">Delete</button>
+            </div>
+          </div>
+        </div>
+
+        <div id="progressTask" class="progress-task">
+          <header class="heaader">
+            <p class="head-text">progress</p>
             <p class="head-text">count</p>
           </header>
         </div>
 
-        <div class="progress-task">
+        <div id="completedTask" class="completed-task ">
           <header class="heaader">
-            <p class="head-text">todo</p>
-            <p class="head-text">count</p>
-          </header>
-        </div>
-
-        <div class="complete-task">
-          <header class="heaader">
-            <p class="head-text">todo</p>
+            <p class="head-text">completed</p>
             <p class="head-text">count</p>
           </header>
         </div>
@@ -41,4 +52,3 @@
     <script src="app.js"></script>
   </body>
 </html>
-++

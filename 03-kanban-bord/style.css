@@ -1,51 +1,160 @@
+/* -------- GOOGLE FONTS -------- */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
+
+/* -------- RESET -------- */
 * {
-  padding: 0;
   margin: 0;
+  padding: 0;
   box-sizing: border-box;
-}
-
-:root {
-  /* padding variables */
-  --nav-padding: 15px 30px;
-  --section-padding: 15px 30px;
-  --padding-s: 5px;
-  --padding-m: 10px;
-  --padding-l: 15px;
-  --padding-xl: 20px;
-
-  /* border radius variables */
-    --border-radius-s: 6px;
-    --border-radius-m: 12px;
-    --border-radius-l: 18px;
-    --border-radius-xl: 24px;
-    --border-radius-xxl: 30px;
- 
-
-
-
-
-  /* color variables */
-  --background: #f4f7f6;
-  --card-background: #ffffff;
-  --nav-background: #ffffff;
-  --border-color: #e0e0e0;
-
-  --font-color: #333333;
-  --font-color-light: #777777;
-
-  --shadow-light: rgba(0, 0, 0, 0.1);
-  --shadow-dark: rgba(0, 0, 0, 0.2);
 }
 
 html,
 body {
-  width: 100%;
   height: 100%;
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background);
+  color: var(--font-color);
 }
 
-main{
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    background-color:green;
+/* -------- VARIABLES (DARK THEME) -------- */
+:root {
+  --nav-padding: 15px 30px;
+  --section-padding: 15px 30px;
+  --padding-m: 10px;
+  --padding-l: 15px;
+
+  --radius-s: 6px;
+  --radius-m: 12px;
+
+  --background: #0f0f0f; /* page bg */
+  --nav-background: #151515; /* navbar bg */
+  --card-background: #1a1a1a; /* column bg */
+  --border-color: #2a2a2a;
+  --border-task-hover: #dbd0d0;
+
+  --font-color: #ffffff;
+  --font-color-light: #b5b5b5;
+
+  --shadow-light: rgba(0, 0, 0, 0.4);
+}
+
+/* -------- MAIN LAYOUT -------- */
+main {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* -------- NAVBAR -------- */
+.nav-bar {
+  padding: var(--nav-padding);
+  background-color: var(--nav-background);
+  box-shadow: 0 2px 4px var(--shadow-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-bar p {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
+
+.nav-bar button {
+  padding: var(--padding-m) var(--padding-l);
+  border-radius: var(--radius-s);
+  border: 1px solid var(--border-color);
+  background-color: var(--card-background);
+  color: var(--font-color);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.nav-bar button:hover {
+  background-color: var(--border-color);
+}
+
+/* -------- KANBAN BOARD -------- */
+.kanban-board {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  padding: var(--section-padding);
+}
+
+/* -------- COLUMN BASE STYLING -------- */
+.new-task,
+.progress-task,
+.completed-task {
+  background-color: var(--card-background);
+  padding: var(--padding-l);
+  border-radius: var(--radius-m);
+  box-shadow: 0 2px 4px var(--shadow-light);
+}
+
+.task-hover-over {
+  border: 2px dashed var(--border-task-hover);
+  padding: calc(var(--padding-l) - 2px);
+  border-radius: var(--radius-m);
+}
+
+/* -------- HEADER INSIDE EACH COLUMN -------- */
+.heaader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--padding-l);
+  padding-bottom: var(--padding-m);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.head-text {
+  font-size: 1.1rem;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.task {
+  background: #1a1a1a;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid #2a2a2a;
+  color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+  cursor: grabbing;
+}
+
+.task-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.task-desc {
+  color: #bdbdbd;
+  margin: 8px 0 12px;
+}
+
+.task-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.edit-btn,
+.delete-btn {
+  padding: 6px 12px;
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+.edit-btn {
+  background: #3a82f7;
+  color: #fff;
+}
+
+.delete-btn {
+  background: #e04f4f;
+  color: #fff;
 }
