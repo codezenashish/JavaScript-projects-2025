@@ -11,7 +11,7 @@
     <main>
       <nav class="nav-bar">
         <p>kanban board</p>
-        <button>add new task</button>
+        <button id="addNewTaskBtn">add new task</button>
       </nav>
 
       <section class="kanban-board">
@@ -40,7 +40,7 @@
           </header>
         </div>
 
-        <div id="completedTask" class="completed-task ">
+        <div id="completedTask" class="completed-task">
           <header class="heaader">
             <p class="head-text">completed</p>
             <p class="head-text">count</p>
@@ -48,6 +48,21 @@
         </div>
       </section>
     </main>
+
+    <div class="addTaskModel">
+      <div class="todo-input">
+      <h2>Add New Task</h2>
+
+      <input type="text" id="task-title" placeholder="Enter task title..." />
+
+      <textarea
+        id="task-desc"
+        placeholder="Enter task description..."
+      ></textarea>
+
+      <button id="add-task-btn">Add Task</button>
+    </div>
+    </div>
 
     <script src="app.js"></script>
   </body>

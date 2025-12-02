@@ -159,3 +159,75 @@ main {
   background: #e04f4f;
   color: #fff;
 }
+
+/* input */
+
+.todo-input {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid #2a2a2a;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-width: 350px;
+  width: 100%;
+}
+
+.todo-input h2 {
+  margin-bottom: 5px;
+  font-size: 1.3rem;
+}
+
+.todo-input input,
+.todo-input textarea {
+  background: #121212;
+  border: 1px solid #2a2a2a;
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  font-size: 1rem;
+}
+
+.todo-input input:focus,
+.todo-input textarea:focus {
+  outline: 1px solid #3a82f7;
+}
+
+.todo-input textarea {
+  height: 80px;
+  resize: none;
+  overflow: hidden;
+}
+
+#add-task-btn {
+  background: #3a82f7;
+  padding: 10px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#add-task-btn:hover {
+  background: #1f6be0;
+}
+
+.addTaskModel {
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  backdrop-filter: blur(5px);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+}
+
+.modelActive{
+  display: flex;
+}

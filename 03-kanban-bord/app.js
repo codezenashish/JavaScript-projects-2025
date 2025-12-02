@@ -7,7 +7,6 @@ const tasks = document.querySelectorAll(".task");
 tasks.forEach((tasks) => {
   tasks.addEventListener("drag", (e) => {
     dragElement = tasks;
-    // console.log(e)
   });
 });
 
@@ -27,6 +26,7 @@ function allowDrop(column) {
   });
 
   column.addEventListener("drop", (e) => {
+    e.preventDefault();
     column.appendChild(dragElement);
     column.classList.remove("task-hover-over");
   });
@@ -34,3 +34,14 @@ function allowDrop(column) {
 allowDrop(newTask);
 allowDrop(progressTask);
 allowDrop(completedTask);
+
+const addNewTaskBtn = document.querySelector("#addNewTaskBtn");
+const taskDiloge = document.querySelector(".addTaskModel");
+
+addNewTaskBtn.addEventListener("click", (e) => {
+  taskDiloge.classList.toggle("modelActive");
+});
+
+taskDiloge.addEventListener("click", () => {
+  taskDiloge.classList.remove("modelActive");
+});
