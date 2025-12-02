@@ -96,7 +96,8 @@ main {
 .task-hover-over {
   border: 2px dashed var(--border-task-hover);
   padding: calc(var(--padding-l) - 2px);
-  border-radius: var(--radius-m);
+  scale: 1.01;
+  transition: all 0.2s ease;
 }
 
 /* -------- HEADER INSIDE EACH COLUMN -------- */
