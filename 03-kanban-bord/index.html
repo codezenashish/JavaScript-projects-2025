@@ -1,6 +1,8 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
+  
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
@@ -11,11 +13,11 @@
     <main>
       <nav class="nav-bar">
         <p>kanban board</p>
-        <button id="addNewTaskBtn">add new task</button>
+        <button id="open-add-task-modal-btn">add new task</button>
       </nav>
 
       <section class="kanban-board">
-        <div id="newTask" class="new-task">
+        <div id="new-task-column" class="new-task">
           <header class="heaader">
             <p class="head-text">new task</p>
             <p class="head-text">count</p>
@@ -33,14 +35,14 @@
           </div>
         </div>
 
-        <div id="progressTask" class="progress-task">
+        <div id="progress-task-column" class="progress-task">
           <header class="heaader">
             <p class="head-text">progress</p>
             <p class="head-text">count</p>
           </header>
         </div>
 
-        <div id="completedTask" class="completed-task">
+        <div id="completed-task-column" class="completed-task">
           <header class="heaader">
             <p class="head-text">completed</p>
             <p class="head-text">count</p>
@@ -51,19 +53,24 @@
 
     <div class="addTaskModel">
       <div class="todo-input">
-      <h2>Add New Task</h2>
+        <h2>Add New Task</h2>
 
-      <input type="text" id="task-title" placeholder="Enter task title..." />
+        <input
+          type="text"
+          id="task-title-input"
+          placeholder="Enter task title..."
+        />
 
-      <textarea
-        id="task-desc"
-        placeholder="Enter task description..."
-      ></textarea>
+        <textarea
+          id="task-desc-input"
+          placeholder="Enter task description..."
+        ></textarea>
 
-      <button id="add-task-btn">Add Task</button>
-    </div>
+        <button id="add-task-submit-btn">Add Task</button>
+      </div>
     </div>
 
     <script src="app.js"></script>
   </body>
 </html>
+<!-- ...existing code... -->

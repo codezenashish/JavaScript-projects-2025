@@ -115,6 +115,7 @@ main {
   font-weight: 500;
   text-transform: capitalize;
 }
+/* task  */
 
 .task {
   background: #1a1a1a;
@@ -126,12 +127,12 @@ main {
   cursor: grabbing;
 }
 
-.task-title {
+.task h3 {
   font-size: 1.2rem;
   font-weight: 600;
 }
 
-.task-desc {
+.task p {
   color: #bdbdbd;
   margin: 8px 0 12px;
 }
@@ -201,7 +202,7 @@ main {
   overflow: hidden;
 }
 
-#add-task-btn {
+#add-task-submit-btn {
   background: #3a82f7;
   padding: 10px;
   border: none;
@@ -212,7 +213,7 @@ main {
   transition: 0.2s ease;
 }
 
-#add-task-btn:hover {
+#add-task-submit-btn:hover {
   background: #1f6be0;
 }
 
