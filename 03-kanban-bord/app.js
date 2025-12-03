@@ -1,9 +1,9 @@
-
 const newTaskColumn = document.querySelector("#new-task-column");
 const progressTaskColumn = document.querySelector("#progress-task-column");
 const completedTaskColumn = document.querySelector("#completed-task-column");
 const addTaskSubmitBtn = document.querySelector("#add-task-submit-btn");
-let todoData = [];
+let todoData = {};
+const columns = [newTaskColumn, progressTaskColumn, completedTaskColumn];
 let dragElement = null;
 
 const tasks = document.querySelectorAll(".task");
@@ -73,7 +73,10 @@ addTaskSubmitBtn.addEventListener("click", (e) => {
     <h3></h3>
     <p></p>
     <div class="task-actions">
-       <button class="edit-btn">Edit</button>
+       <button class="edit-btn">Edit</button>ount
+       
+       
+       co
        <button class="delete-btn">Delete</button>
     </div>
   `;
@@ -88,13 +91,19 @@ addTaskSubmitBtn.addEventListener("click", (e) => {
     div.remove();
   });
 
-  editBtn.addEventListener("click", () => {
-    titleInput.value = taskTitle;
-    descInput.value = taskDescription;
-    div.remove();
-  });
-
   newTaskColumn.appendChild(div);
+
+  // columns.forEach((col) => {
+  //   const tasks = col.querySelectorAll(".head-text");
+  //   const count = col.querySelectorAll(".count-text");
+  //   todoData[col.id] = tasks.map((t) => {
+  //     return {
+  //       title: t.querySelector(".task-title").innerText,
+  //       description: t.querySelector("p").innerText,
+  //     };
+  //   });
+  //   console.log(todoData);
+  // });
 
   titleInput.value = "";
   descInput.value = "";
