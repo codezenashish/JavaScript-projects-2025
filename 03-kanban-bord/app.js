@@ -12,14 +12,12 @@ let todoData = {
   completed: [],
 };
 
-// SAVE DATA
 function saveToLocalStorage() {
   localStorage.setItem("kanbanTasks", JSON.stringify(todoData));
 }
 
 let dragElement = null;
 
-// MAKE TASK DRAGGABLE
 function makeTaskDraggable(taskElement) {
   taskElement.addEventListener("dragstart", () => {
     dragElement = taskElement;
@@ -34,7 +32,6 @@ function makeTaskDraggable(taskElement) {
   });
 }
 
-// ALLOW DROP
 function allowDrop(column) {
   column.addEventListener("dragenter", (e) => {
     e.preventDefault();
@@ -64,7 +61,6 @@ allowDrop(todoColumn);
 allowDrop(progressColumn);
 allowDrop(completedColumn);
 
-// ADD TASK MODAL
 const todoAddBtn = document.querySelector("#add-task-submit-btn");
 const todoCreateBtn = document.querySelector("#open-add-task-modal-btn");
 const modal = document.querySelector(".addTaskModel");
@@ -79,7 +75,6 @@ modal.addEventListener("click", (e) => {
   }
 });
 
-// UPDATE COUNT
 function updateTaskCounts() {
   [todoColumn, progressColumn, completedColumn].forEach((col) => {
     const countEle = col.querySelector(".todoCount");
@@ -88,7 +83,6 @@ function updateTaskCounts() {
   });
 }
 
-// ADD TASK
 todoAddBtn.addEventListener("click", () => {
   const title = inputTitle.value.trim();
   const desc = inputDescription.value.trim();
@@ -116,7 +110,6 @@ todoAddBtn.addEventListener("click", () => {
   updateTaskCounts();
 });
 
-// ADD TASK TO UI
 function addTaskToUI(task, column) {
   const div = document.createElement("div");
   div.classList.add("task");
@@ -131,7 +124,6 @@ function addTaskToUI(task, column) {
 
   makeTaskDraggable(div);
 
-  // DELETE BUTTON WITH ID
   div.querySelector(".delete-btn").addEventListener("click", () => {
     const taskId = Number(div.dataset.id);
     deleteTask(taskId);
@@ -142,7 +134,6 @@ function addTaskToUI(task, column) {
   column.appendChild(div);
 }
 
-// ⭐ DELETE TASK BY ID (MAIN FUNCTION)
 function deleteTask(id) {
   todoData.todo = todoData.todo.filter((t) => t.id !== id);
   todoData.progress = todoData.progress.filter((t) => t.id !== id);
@@ -151,7 +142,6 @@ function deleteTask(id) {
   saveToLocalStorage();
 }
 
-// UPDATE LOCALSTORAGE AFTER DRAGGING
 function updateDataFromUI() {
   todoData.todo = [...todoColumn.querySelectorAll(".task")].map((t) => ({
     id: Number(t.dataset.id),
@@ -176,7 +166,6 @@ function updateDataFromUI() {
   );
 }
 
-// LOAD DATA ON PAGE
 function loadFromLocalStorage() {
   const data = localStorage.getItem("kanbanTasks");
 
