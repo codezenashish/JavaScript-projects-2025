@@ -6,12 +6,19 @@ let todoData = {};
 const columns = [newTaskColumn, progressTaskColumn, completedTaskColumn];
 let dragElement = null;
 
-const tasks = document.querySelectorAll(".task");
-tasks.forEach((tasks) => {
-  tasks.addEventListener("drag", (e) => {
-    dragElement = tasks;
+function makeTaskDraggable(taskElement) {
+  taskElement.addEventListener("dragstart", (e) => {
+    dragElement = taskElement;
+    setTimeout(() => taskElement.classList.add("dragging"), 0);
   });
-});
+  taskElement.addEventListener("dragend", () => {
+    taskElement.classList.remove("dragging");
+    dragElement = null;
+  });
+}
+
+const tasks = document.querySelectorAll(".task");
+tasks.forEach(makeTaskDraggable);
 
 function allowDrop(column) {
   column.addEventListener("dragenter", (e) => {
@@ -30,7 +37,9 @@ function allowDrop(column) {
 
   column.addEventListener("drop", (e) => {
     e.preventDefault();
-    column.appendChild(dragElement);
+    if (dragElement) {
+      column.appendChild(dragElement);
+    }
     column.classList.remove("task-hover-over");
   });
 }
@@ -73,10 +82,7 @@ addTaskSubmitBtn.addEventListener("click", (e) => {
     <h3></h3>
     <p></p>
     <div class="task-actions">
-       <button class="edit-btn">Edit</button>ount
-       
-       
-       co
+       <button class="edit-btn">Edit</button>
        <button class="delete-btn">Delete</button>
     </div>
   `;
@@ -91,19 +97,8 @@ addTaskSubmitBtn.addEventListener("click", (e) => {
     div.remove();
   });
 
+  makeTaskDraggable(div);
   newTaskColumn.appendChild(div);
-
-  // columns.forEach((col) => {
-  //   const tasks = col.querySelectorAll(".head-text");
-  //   const count = col.querySelectorAll(".count-text");
-  //   todoData[col.id] = tasks.map((t) => {
-  //     return {
-  //       title: t.querySelector(".task-title").innerText,
-  //       description: t.querySelector("p").innerText,
-  //     };
-  //   });
-  //   console.log(todoData);
-  // });
 
   titleInput.value = "";
   descInput.value = "";

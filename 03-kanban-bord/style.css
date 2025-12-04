@@ -232,3 +232,8 @@ main {
 .modelActive{
   display: flex;
 }
+
+.task.dragging {
+    opacity: 0.4; 
+    border: 2px dashed #007bff; 
+}
