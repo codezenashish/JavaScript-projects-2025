@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  background-image: url(https://images.pexels.com/photos/5552735/pexels-photo-5552735.jpeg);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background-attachment: fixed;
+  align-items: center;
+}
+
+.container {
+  width: 90%;
+  height: 90%;
+  max-width: 1200px;
+
+  display: grid;
+
+  grid-template-columns: 80px 1fr;
+
+  grid-template-rows: 60px 1fr 80px;
+
+  /* Beech ka gap */
+  gap: 20px;
+
+  /* Areas define karna (Naksha) */
+  grid-template-areas:
+    "search search" /* Top bar poora cover karega */
+    "sidebar main" /* Left me sidebar, right me main */
+    "player player"; /* Bottom bar poora cover karega */
+}
+
+.search-bar {
+  grid-area: search;
+  width: 60%; /* Width kam kardi */
+  margin: 0 auto; /* Center karne ke liye */
+}
+
+.music-player {
+  grid-area: player;
+  width: 50%; /* Width kam kardi */
+  margin: 0 auto; /* Center karne ke liye */
+}
+
+.sidebar {
+  grid-area: sidebar;
+  height: 400px;
+  align-self: center;
+}
+
+.main-content {
+  grid-area: main;
+}
+
+.box {
+  background: rgba(255, 255, 255, 0.1); /* Halka safed transparent rang */
+  backdrop-filter: blur(15px); /* Background ko dhundhla karna */
+  -webkit-backdrop-filter: blur(15px); /* Safari browser ke liye support */
+
+  border: 1px solid rgba(255, 255, 255, 0.2); /* Patla sa shining border */
+  border-radius: 20px; /* Gol kinare */
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Halki si shadow */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
