@@ -38,10 +38,91 @@ body {
     "player player"; /* Bottom bar poora cover karega */
 }
 
+/* SEARCH BAR GLASS BOX (Already has .box styling — we enhance it) */
 .search-bar {
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
   grid-area: search;
-  width: 60%; /* Width kam kardi */
-  margin: 0 auto; /* Center karne ke liye */
+  border-radius: 20px;
+}
+
+/* BACK BUTTON GROUP */
+.back-btn {
+  display: flex;
+  gap: 10px;
+}
+
+.back-btn a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: white;
+  font-size: 20px;
+  /* background: rgba(255, 255, 255, 0.15); */
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+  transition: 0.2s ease;
+}
+
+.back-btn a:hover {
+  background: rgba(255, 255, 255, 0.25);
+  /* transform: scale(1.1); */
+}
+
+/* INPUT BAR WRAPPER */
+.input-bar {
+  /* flex: 1; */
+  display: flex;
+  align-items: center;
+  padding: 10px 18px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.input-bar input {
+  background: transparent;
+  border: none;
+  outline: none;
+  width: 100%;
+
+  color: white;
+  font-size: 16px;
+}
+
+/* THEME BUTTON */
+.search-bar button {
+  width: 45px;
+  height: 45px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  border-radius: 50%;
+  backdrop-filter: blur(10px);
+
+  color: white;
+  font-size: 22px;
+
+  transition: 0.2s ease;
+}
+
+.search-bar button:hover {
+  background: rgba(255, 255, 255, 0.25);
+  transform: scale(1.1) rotate(10deg);
 }
 
 .music-player {
@@ -54,6 +135,27 @@ body {
   grid-area: sidebar;
   height: 400px;
   align-self: center;
+}
+
+.side-icons {
+  display: flex;
+
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.side-icons a {
+  color: white;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 8px;
+}
+
+.side-icons a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
 }
 
 .main-content {
